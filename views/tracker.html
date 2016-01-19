@@ -67,7 +67,7 @@
                 <br>
             </div>
             <br>
-            <div class="col-lg-6" id="filtered" style="display:None">
+            <div class="col-lg-8" id="filtered" style="display:None">
 				<!-- table showing issues filtered by date -->
                 <table class="table table-hover table-bordered">
                     <thead>
@@ -77,9 +77,41 @@
                         </tr>
                     </thead>
                     <tbody>
+						<tr>
+                            <td>Total issues w/o pull requests</td>
+                            <td> {{ actualIssues.length }} </td>
+                        </tr>
+						<tr>
+                            <td>Total pull requests</td>
+                            <td> {{ pullRequests.length }} </td>
+                        </tr>
                         <tr>
-                            <td>Number of open issues that were opened in the last 24 hours</td>
-                            <td> {{ lastDay.length }} </td>
+                            <td>Total open issues</td>
+                            <td> {{ totalOpenIssues.length }} </td>
+                        </tr>
+                        <tr>
+                            <td>Total closed issues</td>
+                            <td> {{ totalClosedIssues.length }} </td>
+                        </tr>
+						<tr>
+                            <td>Total open issues w/o pull requests</td>
+                            <td> {{ openActualIssues.length }} </td>
+                        </tr>
+						<tr>
+                            <td>Total closed issues w/o pull requests</td>
+                            <td> {{ closedActualIssues.length }} </td>
+                        </tr>
+						<tr>
+                            <td>Total open pull requests</td>
+                            <td> {{ openPullRequests.length }} </td>
+                        </tr>
+						<tr>
+                            <td>Total closed pull requests</td>
+                            <td> {{ closedPullRequests.length }} </td>
+                        </tr>
+						<tr>
+                            <td>Number of open issues that were opened less than 24 hours ago</td>
+                            <td>{{ lastDay.length }} </td>
                         </tr>
                         <tr>
                             <td>Number of open issues that were opened more than 24 hours ago but less than 7 days ago</td>
@@ -88,6 +120,66 @@
                         <tr>
                             <td>Number of open issues that were opened more than 7 days ago</td>
                             <td>{{ morethanWeek.length }}</td>
+                        </tr>
+						<tr>
+                            <td>Number of open issues w/o pull requests that were opened less than 24 hours ago</td>
+                            <td>{{ lastDay_wo_pull.length }} </td>
+                        </tr>
+                        <tr>
+                            <td>Number of open issues w/o pull requests that were opened more than 24 hours ago but less than 7 days ago</td>
+                            <td>{{ lastWeek_wo_pull.length }} </td>
+                        </tr>
+                        <tr>
+                            <td>Number of open issues w/o pull requests that were opened more than 7 days ago</td>
+                            <td>{{ morethanWeek_wo_pull.length }}</td>
+                        </tr>
+						<tr>
+                            <td>Number of pull requests that were opened less than 24 hours ago</td>
+                            <td>{{ lastDay_pull.length }} </td>
+                        </tr>
+                        <tr>
+                            <td>Number of pull requests that were opened more than 24 hours ago but less than 7 days ago</td>
+                            <td>{{ lastWeek_pull.length }} </td>
+                        </tr>
+                        <tr>
+                            <td>Number of pull requests that were opened more than 7 days ago</td>
+                            <td>{{ morethanWeek_pull.length }}</td>
+                        </tr>
+						<tr>
+                            <td>Number of closed issues that were opened less than 24 hours ago</td>
+                            <td>{{ lastDay_closed.length }} </td>
+                        </tr>
+                        <tr>
+                            <td>Number of closed issues that were opened more than 24 hours ago but less than 7 days ago</td>
+                            <td>{{ lastWeek_closed.length }} </td>
+                        </tr>
+                        <tr>
+                            <td>Number of closed issues that were opened more than 7 days ago</td>
+                            <td>{{ morethanWeek_closed.length }}</td>
+                        </tr>
+						<tr>
+                            <td>Number of closed issues w/o pull requests that were opened less than 24 hours ago</td>
+                            <td>{{ lastDay_wo_pull_closed.length }} </td>
+                        </tr>
+                        <tr>
+                            <td>Number of closed issues w/o pull requests that were opened more than 24 hours ago but less than 7 days ago</td>
+                            <td>{{ lastWeek_wo_pull_closed.length }} </td>
+                        </tr>
+                        <tr>
+                            <td>Number of closed issues w/o pull requests that were opened more than 7 days ago</td>
+                            <td>{{ morethanWeek_wo_pull_closed.length }}</td>
+                        </tr>
+						<tr>
+                            <td>Number of closed pull requests that were opened less than 24 hours ago</td>
+                            <td>{{ lastDay_pull_closed.length }} </td>
+                        </tr>
+                        <tr>
+                            <td>Number of closed pull requests that were opened more than 24 hours ago but less than 7 days ago</td>
+                            <td>{{ lastWeek_pull_closed.length }} </td>
+                        </tr>
+                        <tr>
+                            <td>Number of closed pull requests that were opened more than 7 days ago</td>
+                            <td>{{ morethanWeek_pull_closed.length }}</td>
                         </tr>
                         <tbody>
                 </table>

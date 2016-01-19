@@ -35,7 +35,7 @@ router.post('/getNumberOfIssues', function(req, res, next) {
             // since we recieve the latest issues we can obtain the number which will be the total number of issues
             res.send("" + jsonBody[0].number);
         } else {
-            res.send("There are no issues for this github project or repository does not exist");
+            res.send("No issues or repository does not exist");
         };
 
     });
