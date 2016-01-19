@@ -8,6 +8,9 @@ app.controller('tracker', function($scope, $http) {
 	$scope.lastDay = [];
 	$scope.lastWeek = [];
 	$scope.morethanWeek = [];
+	$scope.retrievalCount = 0;
+	$scope.totalPostRequests = 0;
+	$scope.retrievalStatus = "Retrieving"
 	
 	$scope.rightNow = new Date();
 	
@@ -64,6 +67,7 @@ app.controller('tracker', function($scope, $http) {
 
 			$http.post('/getNumberOfIssues', $scope.api_query).then(function(response){
 				$scope.totalIssues = response.data;
+				$scope.totalPostRequests = parseInt(response.data/100)+1;
 				for(i=0;i<=parseInt(response.data/100);i++){
 					$scope.getIssues(i+1);
 				}
@@ -97,6 +101,10 @@ app.controller('tracker', function($scope, $http) {
 		};
 
 			$http.post('/getIssues', $scope.api_query).then(function(response){
+				$scope.retrievalCount++;
+				if($scope.retrievalCount == $scope.totalPostRequests){
+					$scope.retrievalStatus = "Done"
+				}
 				$scope.issues = $scope.issues.concat(response.data);
 				$scope.totalIssuesRecvd = $scope.issues.length;
 			});
