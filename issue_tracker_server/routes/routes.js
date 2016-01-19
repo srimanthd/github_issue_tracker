@@ -28,8 +28,6 @@ router.post('/getNumberOfIssues', function(req, res, next){
 
 router.post('/getIssues', function(req, res, next){
 	
-	console.log(req.body);
-	
 	var api_query = req.body.link+"?page="+req.body.page+"&per_page="+req.body.per_page+"&state="+req.body.state;
 	api_query = api_query+"&client_id=64acceafbdcd0595fc02&client_secret=c963286f95bfa57f0bf4e344d16f8f0790a69c09"
 	var api_query_final = { url : api_query, headers: { 'User-Agent': req.body.user } };

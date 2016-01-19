@@ -28,7 +28,7 @@
 					<div><input ng-model="link" type="text" class="form-control" placeholder="example: https://github.com/mbostock/d3">
 					</div>
 					<span class="input-group-btn">
-						<button ng-click="getNumberOfIssues()" class="btn btn-default" type="button">Get Issues!</button>
+						<button ng-click="getNumberOfIssues()" class="btn btn-primary" type="button">Get Issues!</button>
 					</span>
 				</div><!-- /input-group -->
 			</div><!-- /.col-lg-6 -->
@@ -37,6 +37,21 @@
 		<div>
 			<p>Total issues opened for above project : {{ totalIssues }}</p>
 			<p>Got the information for : {{ totalIssuesRecvd }} issues</p>
+		</div>
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="input-group">
+					<span class="input-group-btn">
+						<button ng-click="getIssuesByDate()" class="btn btn-primary" type="button">Get Issues By Date!</button>
+					</span>
+				</div><!-- /input-group -->
+			</div><!-- /.col-lg-6 -->
+		</div>
+		<br>
+		<div>
+			<p>Number of open issues that were opened in the last 24 hours : {{ lastDay.length }}</p>
+			<p>Number of open issues that were opened more than 24 hours ago but less than 7 days ago : {{ lastWeek.length }} </p>
+			<p>Number of open issues that were opened more than 7 days ago : {{ morethanWeek.length }}</p>
 		</div>
 	</div>
 

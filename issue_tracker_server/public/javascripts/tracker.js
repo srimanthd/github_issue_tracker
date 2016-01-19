@@ -1,8 +1,24 @@
 var app = angular.module('trackerApp', []);
 
 app.controller('tracker', function($scope, $http) {
+	
+	$scope.totalIssuesRecvd = 0;
+	$scope.totalIssues = 0;
+	$scope.issues = [];
+	$scope.lastDay = [];
+	$scope.lastWeek = [];
+	$scope.morethanWeek = [];
+	
+	$scope.rightNow = new Date();
 
 	$scope.getNumberOfIssues = function(){
+		
+		$scope.totalIssues = 0;
+		$scope.totalIssuesRecvd = 0;
+		$scope.issues = [];
+		$scope.lastDay = [];
+		$scope.lastWeek = [];
+		$scope.morethanWeek = [];
 		
 		$scope.page = 1;
 		$scope.per_page = 1;
@@ -23,16 +39,18 @@ app.controller('tracker', function($scope, $http) {
 
 		$http.post('/getNumberOfIssues', $scope.api_query).then(function(response){
 			$scope.totalIssues = response.data;
-			for(i=0;i<=parseInt(response.data)/100;i++){
+			for(i=0;i<=parseInt(response.data/100);i++){
 				$scope.getIssues(i+1);
 			}
+			
 		});
 		
 	};
 
 	$scope.getIssues = function(pageNumber){
 
-		$scope.issues = [];
+		$scope.totalIssuesRecvd = 0;
+
 		$scope.page = 1;
 		$scope.per_page = 100;
 		$scope.state = 'all';
@@ -58,5 +76,25 @@ app.controller('tracker', function($scope, $http) {
 			});
 
 	};
+	
+	$scope.getIssuesByDate = function(){
+		
+		$scope.lastDay = [];
+		$scope.lastWeek = [];
+		$scope.morethanWeek = [];
+		
+		for(i=0;i<$scope.issues.length;i++){
+			if(new Date($scope.issues[i].created_at)>new Date($scope.rightNow.getTime()-86400000)){
+				$scope.lastDay.push($scope.issues[i]);
+			}
+			else if(new Date($scope.issues[i].created_at)>new Date($scope.rightNow.getTime()-7*86400000)){
+				$scope.lastWeek.push($scope.issues[i]);
+			}
+			else{
+				$scope.morethanWeek.push($scope.issues[i]);
+			}
+		}
+		
+	}
 
 });
