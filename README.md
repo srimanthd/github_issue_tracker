@@ -24,6 +24,8 @@ Issue Tracker Web Application for Github Projects
 
 3. I would develope better looking UI.
 
+4. I would simplify things by splitting the implimentation to different parts.
+
 
 ############################ Resources used ########################################
 

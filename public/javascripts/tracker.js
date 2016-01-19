@@ -13,7 +13,7 @@ app.controller('tracker', function ($scope, $http) {
 	$scope.retrievalCount = 0;
 	$scope.totalPostRequests = 0;
 	$scope.retrievalStatus = "Retrieving"
-		$scope.rightNow = new Date();
+	$scope.rightNow = new Date();
 
 	// function which validates input link
 	$scope.validateUrl = function (githublink) {
@@ -41,11 +41,15 @@ app.controller('tracker', function ($scope, $http) {
 		d3.select("#dateButton").style("display", "None");
 		d3.select("#filtered").style("display", "None");
 
+		// removing / if it is at the end
+		if($scope.link.charAt($scope.link.length-1)=='/'){
+		$scope.link = $scope.link.slice(0,$scope.link.length-1)
+		}
+		
 		// if the input link is valid we will request the issues
 		if (!$scope.validateUrl($scope.link)) {
 			window.alert("Please enter valid gihub repository link");
 		} else {
-
 			// if the input link is valid then we will display status table and Get Issues By Date button
 			d3.select("#status").style("display", "");
 			d3.select("#dateButton").style("display", "");
