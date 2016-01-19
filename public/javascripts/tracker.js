@@ -18,7 +18,7 @@ app.controller('tracker', function($scope, $http) {
 		
 		var valid = false;
 		
-		if(githublink.indexOf('github.com/') != -1){
+		if(githublink!=undefined && githublink!=null && githublink!="" && githublink.indexOf('github.com/') != -1){
 			var userAndRepo = githublink.split("github.com/")[1];
 			if(userAndRepo.split("/").length==2){
 				valid = true;
