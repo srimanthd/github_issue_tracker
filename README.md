@@ -4,6 +4,20 @@
 
 2. Please check the public/javascripts/tracker.js and routes/routes.js for the logic/implimentation.
 
+
+########################## solution ##########################################
+
+1. My main logic is simple and consists of the following steps
+
+    a. Take the input link
+    b. Parse it to valid Github API link
+    c. send the requests to Github API continuously till we receive all the issues
+    d. Populate a list with json issue objects
+    e. Filter the list by using JS filter method for the given requirements
+    f. Display everything in UI.
+
+
+
 ################################## How to use ######################################
 
 1. Open the following link, enter any github repository link and click on "get issues" and wait for 2-5 seconds for the data retrieval to begin,
