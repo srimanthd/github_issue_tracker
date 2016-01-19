@@ -19,8 +19,8 @@ router.post('/getNumberOfIssues', function(req, res, next){
 		var jsonBody = JSON.parse(body);
 		var numberOfIssues = jsonBody.length;
 
-		if(!error&& numberOfIssues!=0){ res.send(""+jsonBody[0].number); }
-		else { res.send("There are no issues for this github project"); };
+		if(!error && numberOfIssues!=0 && !(jsonBody[0]==undefined)){ res.send(""+jsonBody[0].number); }
+		else { res.send("There are no issues for this github project or repository does not exist"); };
 
 });
 	

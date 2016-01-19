@@ -5,6 +5,7 @@
 	<script src="javascripts/jquery.js" ></script>
 	<script src="javascripts/bootstrap.js" ></script>
 	<script src="javascripts/angular.js" ></script>
+	<script src="javascripts/d3.v3.min.js" ></script>
 	<link rel="stylesheet" type="text/css" href="stylesheets/bootstrap.css"/>
 </head>
 
@@ -34,24 +35,22 @@
 			</div><!-- /.col-lg-6 -->
 		</div>
 		<br>
-		<div>
-			<p>Total issues opened for above project : {{ totalIssues }}</p>
-			<p>Got the information for : {{ totalIssuesRecvd }} issues</p>
-		</div>
 		<div class="row">
-			<div class="col-lg-12">
-				<div class="input-group">
-					<span class="input-group-btn">
-						<button ng-click="getIssuesByDate()" class="btn btn-primary" type="button">Get Issues By Date!</button>
-					</span>
-				</div><!-- /input-group -->
-			</div><!-- /.col-lg-6 -->
+		<div id="status" style="display:None" class="col-lg-6">
+			<table class="table table-hover table-bordered">
+				<thead> <tr> <th>Total issues opened</th> <th>Info recieved for</th> </tr></thead>
+				<tbody> <tr> <td>{{ totalIssues }}</td> <td>{{ totalIssuesRecvd }}</td> <tr></tbody>
+			</table>
+		</div>
+		<div id="dateButton" style="display:None" class="col-lg-6">
+			<button ng-click="getIssuesByDate()" class="btn btn-primary" type="button">Get Issues By Date!</button>
 		</div>
 		<br>
-		<div>
+		<div class="col-lg-12" id="filtered" style="display:None">
 			<p>Number of open issues that were opened in the last 24 hours : {{ lastDay.length }}</p>
 			<p>Number of open issues that were opened more than 24 hours ago but less than 7 days ago : {{ lastWeek.length }} </p>
 			<p>Number of open issues that were opened more than 7 days ago : {{ morethanWeek.length }}</p>
+		</div>
 		</div>
 	</div>
 
