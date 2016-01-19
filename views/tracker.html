@@ -12,17 +12,16 @@
 
 <body ng-app="trackerApp" ng-controller="tracker">
     <nav class="navbar navbar-default navbar-static-top">
-        <!-- Brand and toggle get grouped for better mobile display -->
+
         <div class="navbar-header">
             <a class="navbar-brand" href="#">Issue Tracker</a>
         </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-left">
             </ul>
         </div>
-        <!-- /.navbar-collapse -->
+
     </nav>
     <div class="container-fluid">
         <div class="row">
@@ -35,13 +34,13 @@
 						<button ng-click="getNumberOfIssues()" class="btn btn-primary" type="button">Get Issues!</button>
 					</span>
                 </div>
-                <!-- /input-group -->
             </div>
-            <!-- /.col-lg-6 -->
+
         </div>
         <br>
         <div class="row">
             <div id="status" style="display:None" class="col-lg-6">
+				<!-- table showing total issues opened and recieved -->
                 <table class="table table-hover table-bordered">
                     <thead>
                         <tr>
@@ -69,6 +68,7 @@
             </div>
             <br>
             <div class="col-lg-6" id="filtered" style="display:None">
+				<!-- table showing issues filtered by date -->
                 <table class="table table-hover table-bordered">
                     <thead>
                         <tr>
