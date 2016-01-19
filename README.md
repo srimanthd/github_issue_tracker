@@ -1,6 +1,8 @@
 ######################### github_issue_tracker ###############################
 
-Issue Tracker Web Application for Github Projects
+1. Issue Tracker Web Application for Github Projects
+
+2. Please check the public/javascripts/tracker.js and routes/routes.js for the logic/implimentation.
 
 ################################## How to use ######################################
 
