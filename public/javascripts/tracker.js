@@ -57,6 +57,8 @@ app.controller('tracker', function ($scope, $http) {
 			// if the user inputs another link we need to initialze the following variables
 			$scope.totalIssues = 0;
 			$scope.totalIssuesRecvd = 0;
+			$scope.totalPostRequests = 0;
+			$scope.retrievalCount = 0;
 			$scope.issues = [];
 			$scope.lastDay = [];
 			$scope.lastWeek = [];
