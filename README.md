@@ -2,7 +2,7 @@
 
 1. Issue Tracker Web Application for Github Projects
 
-2. Please check the public/javascripts/tracker.js and routes/routes.js for the logic/implimentation.
+2. Please check the public/javascripts/tracker.js and routes/routes.js for the logic/implementation.
 
 
 ########################## solution ##########################################
@@ -38,9 +38,9 @@
 
 2. I would add better validation and error handling,
 
-3. I would develope better looking UI.
+3. I would develop better looking UI.
 
-4. I would simplify things by splitting the implimentation to different parts.
+4. I would simplify things by splitting the implementation to different parts.
 
 
 ############################ Resources used ########################################
